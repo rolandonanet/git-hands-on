@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+
+    <title>reveal.js – The HTML Presentation Framework</title>
+
+    <meta
+            name="description"
+            content="A framework for easily creating beautiful presentations using HTML"
+    />
+    <meta name="author" content="Hakim El Hattab"/>
+
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta
+            name="apple-mobile-web-app-status-bar-style"
+            content="black-translucent"
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/reveal.css"/>
+    <link rel="stylesheet" href="css/theme/night.css" id="theme"/>
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css"/>
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.type = "text/css";
+        link.href = window.location.search.match(/print-pdf/gi)
+            ? "css/print/pdf.css"
+            : "css/print/paper.css";
+        document.getElementsByTagName("head")[0].appendChild(link);
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<div class="reveal">
+    <!-- Pagina Inicial -->
+    <div class="slides">
+        <section>
+            <img
+                    width="350"
+                    height="300"
+                    data-src="http://pluspng.com/img-png/github-octocat-vector-png-png-50-px-github-octocat-logo-png-1600.png"
+            />
+            <h3><b style="color:#F34F29">GIT</b> Hands On</h3>
+            <p>
+                <small>Criado por <b>Gabriel Roland [Simba]</b> </small>
+            </p>
+        </section>
+        <!-- Sumario-->
+        <section>
+            <h2>Conteúdo abordado</h2>
+            <table>
+                <tr>
+                    <td>Projeto <b style="color:#F34F29">GIT</b></td>
+                  <td>Workflow</td>
+                </tr>
+                <tr>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <section>
+                <h2>Projeto <b style="color:#F34F29">GIT</b></h2>
+                <p>
+                    <small>
+                        O <b style="color:#F34F29">GIT</b> é um sistema que registras as
+                        mudanças feitas durante o processo de ciclo de vida em um
+                        arquivo ou conjunto de arquivos.
+                    </small>
+                </p>
+                <p>
+                    <small>
+                        O projeto teve vida pelas mãos da equipe do Kernel do Linux, que
+                        na epóca utilizava o BitKeeper(Controlador de versão da Apache)
+                        e por haver necessidade de mais funcionalidades que o mesmo não
+                        atendia, foi dada vida há esta excelente ferramenta de controle de versão.
+                    </small>
+                </p>
+            </section>
+            <section>
+                <h3>Fundamentos</h3>
+                <p>
+                    <small>
+                        De inicio o mais importante é entender como o <b style="color:#F34F29">GIT</b> gerência e
+                        armazena todas as informações que são incluidas
+                        ou alteradas pelo usuario. Fazendo uma comparação simples com outros controladores de versão
+                        (<b style="color: #809CC8">Subversion</b>, <b style="color: #404040">Perforce</b>, <b
+                            style="color: yellow">Bazaar</b>, e assim por diante)
+                        que tratam as informações como um conjunto de arquivos e as mudanças feitas a cada arquivo ao
+                        longo do tempo.
+                    </small>
+                </p>
+                <p>
+                    <small>
+                        Já o <b style="color:#F34F29">GIT</b> trata seus dados mais como um conjunto de imagens de um
+                        sistema de arquivos em miniatura.
+                        Toda vez que você fizer um <b style="color:#F34F29">commit</b>, ou salvar o estado de seu
+                        projeto no <b style="color:#F34F29">GIT</b>, ele basicamente
+                        tira uma foto de todos os seus arquivos e armazena uma referência para esse conjunto de
+                        arquivos.
+                    </small>
+                </p>
+                <p>
+                    <small>
+                        Além de trabalhar com três estados diferentes, sendo a <b>stage</b> que se refere ao pacote
+                        atual de desenvolvimento, <b>commit</b>
+                        conjunto de mudanças que será entregue e por ultimo <b>push</b> onde o pacote é enviado.
+                    </small>
+                </p>
+            </section>
+            <section>
+                <h3>Qual gerenciador de repositórios usar?</h3>
+                <img
+                        data-src="https://blog.trincatech.com.br/assets/images/github-vs-gitlab-vs-bitbucket.jpeg"
+                />
+            </section>
+            <section>
+                <h3>Semelhanças e Diferenças</h3>
+                <p>
+                    <small>
+                        Ambos herdam todas as filosofias e implementações do projeto <b style="color:#F34F29">GIT</b>
+                        inicial concebido pela equipe do Kernel do Linux.
+                        Porém o que realmente agrega em cada um deles é o conjunto de funcionalidades que vem junto a
+                        eles como é mostrado no exemplo a baixo:
+                    </small>
+                </p>
+                <table>
+                    <tr>
+                        <td width="40%"><small><b style="color:#F34F29">GitLab</b></small></td>
+                        <td width="40%"><small><b style="color:#2684FF">Bitbucket</b></small></td>
+                        <td width="40%"><small><b
+                                style="background: -webkit-linear-gradient(#161415,#F7F7F7);-webkit-background-clip: text;-webkit-text-fill-color: transparent ">GitHub</b></small>
+                        </td>
+                    </tr>
+                    <tr style="font-size: 20px">
+                        <td><small>Repositórios Privados Gratuitos</small></td>
+                        <td><small>Auto Hospedado</small></td>
+                        <td><small>Código Aberto</small></td>
+                    </tr>
+                    <tr style="font-size: 20px">
+                        <td><small>Integração e Deploy continuo</small></td>
+                        <td><small>Fácil integração com o JIRA</small></td>
+                        <td><small>Análises de código aberto</small></td>
+                    </tr>
+                    <tr style="font-size: 20px">
+                        <td><small>Protected Branches</small></td>
+                        <td><small>UI simples</small></td>
+                        <td><small>Sem limites de colaboradores</small></td>
+                    </tr>
+                    <tr style="font-size: 20px">
+                        <td><small>Inner Sourcing</small></td>
+                        <td><small>Estrutura de ramificação </small></td>
+                        <td><small>Rastreamento de problemas</small></td>
+                    </tr>
+                </table>
+            </section>
+            <section>
+                <h3>Bora pro código!</h3>
+                <a href="#" class="navigate-down">
+                    <img
+                            width="178"
+                            height="238"
+                            data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png"
+                            alt="Down arrow"
+                    />
+                </a>
+            </section>
+            <section>
+                <h3>Configuração</h3>
+                <p><small><b style="color:#F34F29">git</b> config --global user.name "[usuario]"</small></p>
+                <blockquote style="font-size: small">Define um nome identificável para associar ao revisar o histórico
+                    de versões.
+                </blockquote>
+                <p><small><b style="color:#F34F29">git</b> config --global user.email "[email]" </small></p>
+                <blockquote style="font-size: small">Define um email que será associado a cada marcador do histórico.
+                </blockquote>
+                <p><small><b style="color:#F34F29">git</b> config --global color.ui auto</small></p>
+                <blockquote style="font-size: small">Define a coloração automática da linha de comando para o Git para
+                    facilitar a revisão.
+                </blockquote>
+            </section>
+            <section>
+                <h3>Inicio de Projeto</h3>
+                <p><small><b style="color:#F34F29">git</b> init</small></p>
+                <blockquote style="font-size: small">Inicializar um diretório existente como um repositório Git.
+                </blockquote>
+                <p><small><b style="color:#F34F29">git</b> clone [url]</small></p>
+                <blockquote style="font-size: small">recuperar um repositório inteiro de um local hospedado via URL.
+                </blockquote>
+            </section>
+            <section>
+                <h3>Stage & Snapshot</h3>
+                <p><small><b style="color:#F34F29">git</b> status</small></p>
+                <blockquote style="font-size: small">Apresenta os arquivos modificados no diretório ativo, preparado
+                    para sua próxima confirmação.
+                </blockquote>
+                <p><small><b style="color:#F34F29">git</b> add [arquivo/diretório]</small></p>
+                <blockquote style="font-size: small">Adiciona um arquivo como parece agora ao seu próximo commit
+                    (Stage).
+                </blockquote>
+                <p><small><b style="color:#F34F29">git</b> reset [arquivo/diretório]</small></p>
+                <blockquote style="font-size: small">Desvincula um arquivo enquanto mantém as alterações no diretório de
+                    trabalho.
+                </blockquote>
+                <p><small><b style="color:#F34F29">git</b> diff</small></p>
+                <blockquote style="font-size: small">Difere o que foi alterado.
+                </blockquote>
+            </section>
+            <section>
+                <h3>Stage & Snapshot</h3>
+                <p><small><b style="color:#F34F29">git</b> diff --staged</small></p>
+                <blockquote style="font-size: small">Difere o que foi alterado, mas não está comitado.
+                </blockquote>
+                <p><small><b style="color:#F34F29">git</b> commit -m “[mensagem]”</small></p>
+                <blockquote style="font-size: small">Confirma seu conteúdo na Stage como um novo commit snapshot
+                </blockquote>
+            </section>
+            <section>
+                <h3>Branch & Merge</h3>
+                <p><small><b style="color:#F34F29">git</b> branch</small></p>
+                <blockquote style="font-size: small">Lista todas as branchs e marca(*) a que está atualmente ativa.
+                </blockquote>
+                <p><small><b style="color:#F34F29">git</b> branch [nome]</small></p>
+                <blockquote style="font-size: small">Cria uma nova branch, a partir do commit atual.
+                </blockquote>
+                <p><small><b style="color:#F34F29">git</b> checkout [branch]</small></p>
+                <blockquote style="font-size: small">Muda para outra branch.
+                </blockquote>
+                <p><small><b style="color:#F34F29">git</b> merge [branch]</small></p>
+                <blockquote style="font-size: small">Mescla o histórico da branch especificado no atual.
+                </blockquote>
+            </section>
+            <section>
+                <h3>Inspecione & Compare</h3>
+                <p><small><b style="color:#F34F29">git</b> log</small></p>
+                <blockquote style="font-size: small">Apresenta todos os commits no histórico da branch atual.
+                </blockquote>
+                <p><small><b style="color:#F34F29">git</b> log --follow [arquivo/diretório]</small></p>
+                <blockquote style="font-size: small">Apresenta os commits que alteraram o arquivo, mesmo entre os
+                    renomeados.
+                </blockquote>
+                <p><small><b style="color:#F34F29">git</b> show [SHA] </small></p>
+                <blockquote style="font-size: small"> Apresenta um objeto no Git em formato legível.
+                </blockquote>
+            </section>
+            <section>
+                <h3>Compartilhe & Atualize</h3>
+                <p><small><b style="color:#F34F29">git</b> remote add [alias] [url]</small></p>
+                <blockquote style="font-size: small">Adicione um URL git como um alias.
+                </blockquote>
+                <p><small><b style="color:#F34F29">git</b> fetch [alias]</small></p>
+                <blockquote style="font-size: small">Busca todas as branchs refentes a informada.
+                </blockquote>
+                <p><small><b style="color:#F34F29">git</b> push [alias] [branch]</small></p>
+                <blockquote style="font-size: small">Envia a branch local para um repostório remoto.
+                </blockquote>
+                <p><small><b style="color:#F34F29">git</b> pull</small></p>
+                <blockquote style="font-size: small">Busca e mescla quaisquer commit da branch remota de rastreamento.
+                </blockquote>
+            </section>
+            <section>
+                <h3>Reescrever</h3>
+                <p><small><b style="color:#F34F29">git</b> rebase [branch]</small></p>
+                <blockquote style="font-size: small">Aplica quaisquer commits da branch atual antes da especificada.
+                </blockquote>
+                <p><small><b style="color:#F34F29">git</b> reset --hard [commit]</small></p>
+                <blockquote style="font-size: small">Limpa toda a stage.
+                </blockquote>
+            </section>
+            <section>
+                <h3>Commits temporários</h3>
+                <p><small><b style="color:#F34F29">git</b> stash</small></p>
+                <blockquote style="font-size: small">Salva as alterações realizada.
+                </blockquote>
+                <p><small><b style="color:#F34F29">git</b> stash list</small></p>
+                <blockquote style="font-size: small">Lista as alterações realizadas.
+                </blockquote>
+                <p><small><b style="color:#F34F29">git</b> stash drop</small></p>
+                <blockquote style="font-size: small">Descarta todas as alterações feitas.
+                </blockquote>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>WorkFlow</h2>
+                <img width="700px" height="400px"
+                     src="https://wac-cdn.atlassian.com/dam/jcr:25d06843-2468-4e00-8ae7-11d4164f8995/hero.svg?cdnVersion=807">
+            </section>
+            <section>
+                <h3>Centralizado</h3>
+                <img width="700px" height="400px"
+                     src="https://wac-cdn.atlassian.com/dam/jcr:0869c664-5bc1-4bf2-bef0-12f3814b3187/01.svg?cdnVersion=807">
+            </section>
+          <section>
+            <h3>Como isso funciona?</h3>
+          </section>
+          <section>
+            <p>
+              <small>
+                Os desenvolvedores começam clonando o repositório central.
+                Em suas próprias cópias locais do projeto, eles editam arquivos e comitam alterações como fariam com o SVN; no entanto, essas novas confirmações são armazenadas localmente - elas são completamente isoladas do repositório central.
+                Isso permite que os desenvolvedores adiem a sincronização até que estejam em um ponto de interrupção conveniente.
+              </small>
+            </p>
+          </section>
+          <section>
+            <p>
+              <small>
+                A seguir, é apresentado um exemplo do tipo de cenário no qual Centralized Workflow é usado. O
+                cenário é o de um integrante da equipe fazendo uma publicação das alterações locais para a branch master.
+              </small>
+            </p>
+            <img width="700px" height="400px"
+                 src="https://www.atlassian.com/dam/jcr:6e5dc66d-b041-4013-b321-b1908fecfdbd/08.svg">
+          </section>
+
+            <section>
+                <h3>Feature Branch</h3>
+                <img width="700px" height="400px"
+                     src="https://www.atlassian.com/dam/jcr:e2c88c1b-fb28-46a3-93be-c1c45f86bd1c/03%20(1).svg">
+            </section>
+            <section>
+                <h3>Como isso funciona?</h3>
+            </section>
+            <section>
+                <p>
+                    <small>
+                        O Feature Branch Workflow assume um repositório central em que a master representa o histórico
+                        oficial do projeto.
+                        Em vez de confirmar diretamente em sua branch principal local, os desenvolvedores criam uma nova
+                        branch sempre que começam a trabalhar em um novo recurso.
+                        As branchs dos recursos devem ter nomes descritivos, como itens de menu animados ou problema.
+                        A idéia é dar um objetivo claro e altamente focado a cada filial.
+                        O Git não faz distinção técnica entre a branch principal e as branch de recursos, para que os
+                        desenvolvedores possam editar, preparar e confirmar alterações em uma branch de recursos.
+                    </small>
+                </p>
+            </section>
+            <section>
+                <p>
+                    <small>
+                        A seguir, é apresentado um exemplo do tipo de cenário no qual Feature Branch Workflow é usado. O
+                        cenário é o de uma equipe fazendo uma revisão de código em uma nova solicitação de recebimento
+                        de recurso.
+                    </small>
+                </p>
+                <img width="700px" height="400px"
+                     src="https://www.atlassian.com/dam/jcr:09308632-38a3-4637-bba2-af2110629d56/07.svg">
+            </section>
+            <section>
+                <h3><b style="color:#F34F29">Git</b>Flow</h3>
+                <img width="700px" height="400px"
+                     src="https://www.atlassian.com/dam/jcr:61ccc620-5249-4338-be66-94d563f2843c/05%20(2).svg">
+            </section>
+            <section>
+                <p><small>O conjunto de ferramentas git-flow é uma ferramenta de linha de comando real que possui um
+                    processo de instalação. </small></p>
+                <p><small>O Git-flow é um invólucro do Git. O comando git flow init é uma extensão do comando git init
+                    padrão e não altera nada no seu repositório além de criar ramificações para você.</small></p>
+            </section>
+            <section>
+                <h3>Como isso funciona?</h3>
+                <img width="700px" height="400px"
+                     src="https://www.atlassian.com/dam/jcr:2bef0bef-22bc-4485-94b9-a9422f70f11c/02%20(2).svg">
+            </section>
+            <section>
+                <h3>Develop & Master Branches </h3>
+                <p><small>Em vez de uma única branch master, esse fluxo de trabalho usa duas branchs para registrar o
+                    histórico do projeto.
+                    A branch principal armazena o histórico oficial de lançamento e a branch de desenvolvimento serve
+                    como branch de integração de novos recursos.
+                    Também é conveniente marcar todas os commits na branch master com um número de versão.</small></p>
+            </section>
+            <section>
+                <h3><b style="color:#F34F29">Git</b>Flow - Feature Branches</h3>
+                <img width="700px" height="400px"
+                     src="https://www.atlassian.com/dam/jcr:b5259cce-6245-49f2-b89b-9871f9ee3fa4/03%20(2).svg">
+            </section>
+            <section>
+                <p><small>Cada novo recurso deve residir em sua própria branch, que pode ser enviada ao repositório
+                    central para backup / colaboração.
+                    Mas, em vez de se ramificar da master, as feature branches usam a develop como seu branch
+                    pai.
+                    Quando um recurso é concluído, ele é mesclado novamente ao desenvolvimento.
+                    Os recursos nunca devem interagir diretamente com a master.</small></p>
+            </section>
+            <section>
+                <h3><b style="color:#F34F29">Git</b>Flow - Release Branches</h3>
+                <img width="700px" height="400px"
+                     src="https://www.atlassian.com/dam/jcr:a9cea7b7-23c3-41a7-a4e0-affa053d9ea7/04%20(1).svg">
+            </section>
+            <section>
+                <p><small>Depois que a branch de develop adquiriu recursos suficientes para um release, você divide uma
+                    branch do release.
+                    A criação dessa branch inicia o próximo ciclo de liberação, portanto, nenhum novo recurso pode ser
+                    adicionado após esse ponto - apenas correções de bugs, geração de documentação e outras tarefas
+                    orientadas a liberação devem ser realizadas nesta branch.
+                    Quando estiver pronto para o envio, a branch de lançamento será mesclada na master e marcada com um
+                    número de versão.
+                    Além disso, ele deve ser mesclado novamente na develop, o que pode ter progredido desde o
+                    início do lançamento.</small></p>
+            </section>
+            <section>
+                <h3><b style="color:#F34F29">Git</b>Flow - Hotfix Branches</h3>
+                <img width="700px" height="400px"
+                     src="https://www.atlassian.com/dam/jcr:61ccc620-5249-4338-be66-94d563f2843c/05%20(2).svg">
+            </section>
+            <section>
+                <p><small>As branchs de manutenção ou “hotfix” são usadas para corrigir rapidamente as liberações de
+                    produção.
+                    As branchs de hotfix são muito parecidas com as branchs de release e as de feature, exceto que são
+                    baseadas na master, e não no desenvolvimento.
+                    Esse é a única branch que deve se separar diretamente da master. Assim que a correção estiver
+                    concluída, ela deverá ser mesclada na master e na develop e a master deverá ser marcada com um
+                    número de versão atualizado.</small></p>
+            </section>
+          <section>
+            <h3> Fluxo final de trabalho</h3>
+            <p><small>1° - Uma branch de desenvolvimento é criada a partir da branch master.</small></p>
+            <p><small>2° - Uma branch de release é criada a partir da branch develop.</small></p>
+            <p><small>3° - As feature branchs são criadas a partir da branch develop.</small></p>
+            <p><small>4° - Quando um recurso é concluído, ele é mesclado na branch develop.</small></p>
+            <p><small>5° - Quando a release branch é concluída, ela é mesclada na develop e na master.</small></p>
+            <p><small>6° - Se um problema na master for detectado, uma branch de hotfix será criada a partir da master.</small></p>
+            <p><small>7° - Depois que o hotfix é concluído, ele é mesclado para develop e master.</small></p>
+          </section>
+        </section>
+    </div>
+</div>
+
+<script src="js/reveal.js"></script>
+
+<script>
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        center: true,
+        hash: true,
+
+        transition: "slide", // none/fade/slide/convex/concave/zoom
+
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+            {
+                src: "plugin/markdown/marked.js",
+                condition: function () {
+                    return !!document.querySelector("[data-markdown]");
+                }
+            },
+            {
+                src: "plugin/markdown/markdown.js",
+                condition: function () {
+                    return !!document.querySelector("[data-markdown]");
+                }
+            },
+            {src: "plugin/highlight/highlight.js"},
+            {src: "plugin/search/search.js", async: true},
+            {src: "plugin/zoom-js/zoom.js", async: true},
+            {src: "plugin/notes/notes.js", async: true}
+        ]
+    });
+</script>
+</body>
+</html>
